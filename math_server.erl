@@ -17,7 +17,7 @@
 
 
 start() ->
-  ProcessPid =
+  ServerPid =
     spawn_link(
       ?MODULE,
       init,
@@ -26,10 +26,10 @@ start() ->
 
   register(
     ?MODULE,
-    ProcessPid
+    ServerPid
   ),
 
-  ProcessPid.
+  ServerPid.
 
 
 stop() ->

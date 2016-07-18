@@ -10,7 +10,7 @@
 
 
 start() ->
-  ProcessPid =
+  SupervisorPid =
     spawn(
       ?MODULE,
       init,
@@ -19,10 +19,10 @@ start() ->
 
   register(
     ?MODULE,
-    ProcessPid
+    SupervisorPid
   ),
 
-  ProcessPid.
+  SupervisorPid.
 
 
 stop() ->
